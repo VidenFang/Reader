@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Manga</string>
+
+    <!-- Activity labels -->
+    <string name="label_main">Manga</string>
+
+    <!-- Arrays -->
+
+    <string name="title_library">My library</string>
+    <string name="title_recent_updates">Recent updates</string>
+    <string name="title_catalogues">Catalogues</string>
+    <string name="title_settings">Settings</string>
+</resources>
