@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import com.bumptech.glide.Glide;
 import com.demo.manga.R;
 import com.demo.manga.data.models.Manga;
+import com.demo.manga.databinding.ItemLibraryBinding;
 
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class LibraryAdapter extends ArrayAdapter<Manga> {
         MangaHolder holder;
         if (itemView == null) {
             LayoutInflater layoutInflater = ((Activity) mContext).getLayoutInflater();
-            itemView = layoutInflater.inflate(mResourceId, parent, false);
+            itemView = ItemLibraryBinding.inflate(layoutInflater,parent,false).getRoot();
             holder = new MangaHolder(itemView);
             itemView.setTag(holder);
         } else {
@@ -93,8 +94,9 @@ public class LibraryAdapter extends ArrayAdapter<Manga> {
         TextView mTvName;
 
         public MangaHolder(View view) {
-            mThumbnail = view.findViewById(R.id.iv_thumbnail);
-            mTvName = view.findViewById(R.id.tv_name);
+            ItemLibraryBinding binding = ItemLibraryBinding.bind(view);
+            mThumbnail = binding.ivThumbnail;
+            mTvName = binding.tvName;
         }
     }
 }

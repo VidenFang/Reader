@@ -1,9 +1,11 @@
 package com.demo.manga.ui.activity;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.demo.manga.R;
 import com.demo.manga.databinding.ActivityMainBinding;
@@ -70,13 +72,11 @@ public class MainActivity extends BaseActivity {
 
     private void setFragment(Fragment fragment) {
         try {
-            FragmentManager fragmentManager = getFragmentManager();
-            if (fragment != null && fragmentManager != null) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            if (fragment != null) {
                 FragmentTransaction ft = fragmentManager.beginTransaction();
-                if (ft != null) {
-                    ft.replace(R.id.frame_container, fragment);
-                    ft.commit();
-                }
+                ft.replace(R.id.frame_container, fragment);
+                ft.commit();
             }
         } catch (Exception e) {
             e.printStackTrace();

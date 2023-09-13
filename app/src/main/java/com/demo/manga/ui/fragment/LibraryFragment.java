@@ -1,14 +1,14 @@
 package com.demo.manga.ui.fragment;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.fragment.app.Fragment;
 
 import com.demo.manga.R;
 import com.demo.manga.data.models.Manga;
@@ -59,13 +59,19 @@ public class LibraryFragment extends Fragment implements ILibraryView {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        fragmentLibraryBinding = FragmentLibraryBinding.inflate(inflater,container,false);
+        fragmentLibraryBinding = FragmentLibraryBinding.inflate(inflater, container, false);
         ActionBar actionBar = ((BaseActivity) getActivity()).getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle(R.string.title_library);
         }
         mLibraryPresenter.initLibMangaDatas();
         return fragmentLibraryBinding.getRoot();
+    }
+
+    @Override
+    public void onDestroy() {
+        fragmentLibraryBinding = null;
+        super.onDestroy();
     }
 
     @Override
