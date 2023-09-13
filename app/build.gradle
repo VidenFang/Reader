@@ -1,60 +1,67 @@
-apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
-apply plugin: 'com.neenbedankt.android-apt'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "25.0.0"
+    namespace 'com.demo.manga'
+    compileSdk 33
+
     defaultConfig {
         applicationId "com.demo.manga"
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdk 24
+        targetSdk 33
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures{
+        viewBinding true
+        buildConfig true
     }
 }
 
 dependencies {
-    final SUPPORT_LIBRARY_VERSION = '23.0.1'
-    final DAGGER_VERSION = '2.0.1'
-    final STORIO_VERSION = '1.4.0'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'com.google.dagger:dagger:2.48'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.48'
 
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
 
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.jakewharton.timber:timber:3.1.0'
-    compile 'com.github.bumptech.glide:glide:3.6.1'
+//    implementation 'com.pushtorefresh.storio3:sqlite:3.0.0'
+//    implementation 'com.pushtorefresh.storio3:content-resolver:3.0.0'
+//    implementation 'com.pushtorefresh.storio3:sqlite-annotations:3.0.0'
+//    annotationProcessor 'com.pushtorefresh.storio3:sqlite-annotations-processor:3.0.0'
 
-    compile('com.mikepenz:materialdrawer:4.3.0@aar') {
-        transitive = true
-    }
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'com.jakewharton.timber:timber:5.0.1'
 
-    compile "com.google.dagger:dagger:$DAGGER_VERSION"
-    apt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
-    androidTestApt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+//     https://mvnrepository.com/artifact/com.mikepenz/materialdrawer
+//    implementation 'com.mikepenz:materialdrawer:9.0.2'
+    implementation 'com.mikepenz:materialdrawer:7.0.0-rc09'
 
-    compile "com.pushtorefresh.storio:sqlite:$STORIO_VERSION"
-    compile "com.pushtorefresh.storio:sqlite-annotations:$STORIO_VERSION"
-    apt "com.pushtorefresh.storio:sqlite-annotations-processor:$STORIO_VERSION"
-
-    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta1'
-    compile 'io.reactivex:rxandroid:1.0.1'
+//    implementation('com.mikepenz:materialdrawer:4.3.0@aar') {
+//        transitive = true
+//    }
 }

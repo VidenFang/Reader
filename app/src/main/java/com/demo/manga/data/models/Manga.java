@@ -1,11 +1,8 @@
 package com.demo.manga.data.models;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
-import com.demo.manga.data.tables.MangasTable;
-import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn;
-import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * @ProjectName: Manga
@@ -19,66 +16,50 @@ import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
-@StorIOSQLiteType(table = MangasTable.TABLE)
 public class Manga {
     @Nullable
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_ID, key = true)
     public Long id;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_SOURCE)
     public int source;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_URL)
     public String url;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_ARTIST)
     public String artist;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_AUTHOR)
     public String author;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_DESCRIPTION)
     public String description;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_GENRE)
     public String genre;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_TITLE)
     public String title;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_STATUS)
     public String status;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_THUMBNAIL_URL)
     public String thumbnail_url;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_RANK)
     public int rank;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_LAST_UPDATE)
     public long last_update;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_INITIALIZED)
     public boolean initialized;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_VIEWER)
     public int viewer;
 
     @NonNull
-    @StorIOSQLiteColumn(name = MangasTable.COLUMN_CHAPTER_ORDER)
     public int chapter_order;
 
     public Manga() {}

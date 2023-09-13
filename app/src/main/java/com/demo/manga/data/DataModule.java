@@ -2,14 +2,13 @@ package com.demo.manga.data;
 
 import android.app.Application;
 
-import com.demo.manga.data.helpers.DatabaseHelper;
-
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import rx.Scheduler;
-import rx.schedulers.Schedulers;
+import io.reactivex.rxjava3.core.Scheduler;
+import io.reactivex.rxjava3.schedulers.Schedulers;
+
 
 /**
  * @ProjectName: Manga
@@ -25,12 +24,6 @@ import rx.schedulers.Schedulers;
  */
 @Module
 public class DataModule {
-
-    @Provides
-    @Singleton
-    DatabaseHelper provideDatabaseHelper(Application app) {
-        return new DatabaseHelper(app);
-    }
 
     @Provides
     @Singleton

@@ -4,34 +4,28 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.widget.FrameLayout;
 
 import com.demo.manga.R;
+import com.demo.manga.databinding.ActivityMainBinding;
 import com.demo.manga.ui.BaseActivity;
 import com.demo.manga.ui.fragment.LibraryFragment;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 import timber.log.Timber;
 
 public class MainActivity extends BaseActivity {
-    @Bind(R.id.toolbar)
-    Toolbar mToolbar;
 
-    @Bind(R.id.drawer_container)
-    FrameLayout mDrawerContainer;
+    private ActivityMainBinding binding;
 
     private Drawer mDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         setupToolbar();
         initDrawer(savedInstanceState);
     }
@@ -39,8 +33,8 @@ public class MainActivity extends BaseActivity {
     private void initDrawer(Bundle savedInstanceState) {
         mDrawer = new DrawerBuilder()
                 .withActivity(this)
-                .withRootView(mDrawerContainer)
-                .withToolbar(mToolbar)
+                .withRootView(binding.drawerContainer)
+                .withToolbar(binding.toolbar)
                 .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(
                         new PrimaryDrawerItem()
@@ -59,26 +53,19 @@ public class MainActivity extends BaseActivity {
                 .withSavedInstance(savedInstanceState)
                 .withOnDrawerItemClickListener(
                         (view, position, drawerItem) -> {
-                            if (drawerItem != null) {
-                                int identifier = drawerItem.getIdentifier();
-                                switch (identifier) {
-                                    case R.id.nav_drawer_library:
-                                        setFragment(LibraryFragment.newInstance());
-                                        break;
-                                    case R.id.nav_drawer_recent_updates:
-                                        break;
-                                    case R.id.nav_drawer_catalogues:
-                                        break;
-                                    case R.id.nav_drawer_settings:
-                                        break;
-                                }
+                            long identifier = drawerItem.getIdentifier();
+                            if (identifier == R.id.nav_drawer_library) {
+                                setFragment(LibraryFragment.newInstance());
+                            } else if (identifier == R.id.nav_drawer_recent_updates) {
+                            } else if (identifier == R.id.nav_drawer_catalogues) {
+                            } else if (identifier == R.id.nav_drawer_settings) {
                             }
                             return false;
                         }
                 )
                 .build();
 
-//        mDrawer.setSelection(R.id.nav_drawer_library);
+        mDrawer.setSelection(R.id.nav_drawer_library);
     }
 
     private void setFragment(Fragment fragment) {
@@ -87,17 +74,17 @@ public class MainActivity extends BaseActivity {
             if (fragment != null && fragmentManager != null) {
                 FragmentTransaction ft = fragmentManager.beginTransaction();
                 if (ft != null) {
-                    ft.replace(R.id.content_layout, fragment);
+                    ft.replace(R.id.frame_container, fragment);
                     ft.commit();
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Timber.e(e.getMessage(), e);
+            Timber.e(e);
         }
     }
 
     private void setupToolbar() {
-        setSupportActionBar(mToolbar);
+        setSupportActionBar(binding.toolbar);
     }
 }

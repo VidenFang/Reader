@@ -1,6 +1,6 @@
 package com.demo.manga.data.tables;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * @ProjectName: Manga

@@ -3,7 +3,8 @@ package com.demo.manga.data.helpers;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import com.demo.manga.data.tables.MangasTable;
 

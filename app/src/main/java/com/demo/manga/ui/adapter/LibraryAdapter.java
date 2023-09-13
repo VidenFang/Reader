@@ -2,9 +2,6 @@ package com.demo.manga.ui.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +9,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.bumptech.glide.Glide;
 import com.demo.manga.R;
 import com.demo.manga.data.models.Manga;
 
 import java.util.List;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * @ProjectName: Manga
@@ -74,29 +73,28 @@ public class LibraryAdapter extends ArrayAdapter<Manga> {
     }
 
     private String getImageUrl(int position) {
-//        switch (position % 4) {
-//            case 0:
-//                break;
-//            case 1:
-//                return "http://images.dmzj.com/webpic/19/190226qianye.jpg";
-//            case 2:
-//                return "https://images.dmzj.com/webpic/4/qingyejun0516.jpg";
-//            case 3:
-//                return "https://images.dmzj.com/webpic/1/onepunchmanfengmianl.jpg";
-//        }
+        switch (position % 4) {
+            case 0:
+                return "https://imgpic.idmzj.com/img/webpic/3/1117201831604035860.jpg";
+            case 1:
+                return "https://imgpic.idmzj.com/img/webpic/11/1147788311694445490.jpg";
+            case 2:
+                return "https://images.dmzj.com/webpic/4/qingyejun0516.jpg";
+            case 3:
+                return "https://images.dmzj.com/webpic/1/onepunchmanfengmianl.jpg";
+        }
         return "http://img1.wikia.nocookie.net/__cb20090524204255/starwars/images/thumb/1/1a/R2d2.jpg/400px-R2d2.jpg";
 
     }
 
     static class MangaHolder {
-        @Bind(R.id.iv_thumbnail)
         ImageView mThumbnail;
 
-        @Bind(R.id.tv_name)
         TextView mTvName;
 
         public MangaHolder(View view) {
-            ButterKnife.bind(this, view);
+            mThumbnail = view.findViewById(R.id.iv_thumbnail);
+            mTvName = view.findViewById(R.id.tv_name);
         }
     }
 }
