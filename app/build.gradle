@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'com.demo.manga'
+    namespace 'com.viden.reader'
     compileSdk 33
 
     defaultConfig {
@@ -11,7 +11,7 @@ android {
         minSdk 24
         targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
