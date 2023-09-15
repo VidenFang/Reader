@@ -14,6 +14,7 @@ import com.viden.reader.ui.fragment.LibraryFragment;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.viden.reader.ui.fragment.SettingsFragment;
 
 import timber.log.Timber;
 
@@ -61,6 +62,7 @@ public class MainActivity extends BaseActivity {
                             } else if (identifier == R.id.nav_drawer_recent_updates) {
                             } else if (identifier == R.id.nav_drawer_catalogues) {
                             } else if (identifier == R.id.nav_drawer_settings) {
+                                setFragment(SettingsFragment.newInstance());
                             }
                             return false;
                         }
