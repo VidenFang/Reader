@@ -2,7 +2,7 @@ package com.viden.reader.data;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.data
+ * @Package: com.viden.reader.data
  * @ClassName: Manga
  * @Description: java类作用描述
  * @Author: Viden

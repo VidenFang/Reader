@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.data.helpers
+ * @Package: com.viden.reader.data.helpers
  * @ClassName: SharedPreferencesHelper
  * @Description: java类作用描述
  * @Author: Viden

@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Manga Demo"
+rootProject.name = "Reader"
 include ':app'

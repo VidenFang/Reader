@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,10 +12,14 @@ import androidx.fragment.app.Fragment;
 
 import com.viden.reader.BuildConfig;
 import com.viden.reader.databinding.FragmentSettingBinding;
+import com.viden.reader.presenter.SettingsPresenter;
+import com.viden.reader.view.ISettingsView;
+import com.viden.reader.view.IShowToastView;
 
-public class SettingsFragment extends Fragment {
+public class SettingsFragment extends BaseFragment implements ISettingsView{
 
     private FragmentSettingBinding fragmentSettingBinding;
+    private SettingsPresenter presenter;
 
     public static SettingsFragment newInstance() {
         Bundle args = new Bundle();
@@ -32,22 +37,11 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentSettingBinding = FragmentSettingBinding.inflate(inflater,container,false);
+        presenter = new SettingsPresenter(this);
         fragmentSettingBinding.checkUpdateBtn.setOnClickListener(view -> {
-            checkForUpdate(BuildConfig.VERSION_NAME);
+            presenter.checkForUpdate();
         });
         return fragmentSettingBinding.getRoot();
     }
 
-    private void checkForUpdate(String versionName) {
-        //toast
-        //check
-            //success
-                //new
-                    //dialog
-                        //download
-                //latest
-                    //toast
-            //failure
-                //toast
-    }
 }

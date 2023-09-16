@@ -24,7 +24,7 @@ import java.util.List;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.ui.fragment
+ * @Package: com.viden.reader.ui.fragment
  * @ClassName: LibraryFragment
  * @Description: java类作用描述
  * @Author: Viden
@@ -34,7 +34,7 @@ import java.util.List;
  * @UpdateRemark: 更新说明
  * @Version: 1.0
  */
-public class LibraryFragment extends Fragment implements ILibraryView {
+public class LibraryFragment extends BaseFragment implements ILibraryView {
 
     FragmentLibraryBinding fragmentLibraryBinding;
     private LibraryAdapter mAdapter;

@@ -9,7 +9,7 @@ import dagger.Provides;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga
+ * @Package: com.viden.reader
  * @ClassName: AppModule
  * @Description: 提供single Application
  * @Author: Viden

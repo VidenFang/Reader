@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.view
+ * @Package: com.viden.reader.view
  * @ClassName: ILibraryView
  * @Description: java类作用描述
  * @Author: Viden

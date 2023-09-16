@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.data.models
+ * @Package: com.viden.reader.data.models
  * @ClassName: Manga
  * @Description: java类作用描述
  * @Author: Viden

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.presenter
+ * @Package: com.viden.reader.presenter
  * @ClassName: LibraryPresenter
  * @Description: java类作用描述
  * @Author: Viden

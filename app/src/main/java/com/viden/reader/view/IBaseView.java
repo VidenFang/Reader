@@ -4,7 +4,7 @@ import android.content.Context;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.view
+ * @Package: com.viden.reader.view
  * @ClassName: IBaseView
  * @Description: java类作用描述
  * @Author: Viden

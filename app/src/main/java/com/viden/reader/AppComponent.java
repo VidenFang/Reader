@@ -10,7 +10,7 @@ import dagger.Component;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga
+ * @Package: com.viden.reader
  * @ClassName: AppComponent
  * @Description: java类作用描述
  * @Author: Viden

@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.ui.adapter
+ * @Package: com.viden.reader.ui.adapter
  * @ClassName: LibraryAdapter
  * @Description: java类作用描述
  * @Author: Viden

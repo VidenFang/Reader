@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.ui
+ * @Package: com.viden.reader.ui
  * @ClassName: BaseActivity
  * @Description: java类作用描述
  * @Author: Viden

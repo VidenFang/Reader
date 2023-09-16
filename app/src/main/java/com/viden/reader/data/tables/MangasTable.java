@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.data.helpers.tables
+ * @Package: com.viden.reader.data.helpers.tables
  * @ClassName: MangasTable
  * @Description: java类作用描述
  * @Author: Viden

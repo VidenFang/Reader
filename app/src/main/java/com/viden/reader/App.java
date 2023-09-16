@@ -10,7 +10,7 @@ import timber.log.Timber;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga
+ * @Package: com.viden.reader
  * @ClassName: App
  * @Description: java类作用描述
  * @Author: Viden

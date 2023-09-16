@@ -10,7 +10,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 /**
  * @ProjectName: Manga
- * @Package: com.demo.manga.data
+ * @Package: com.viden.reader.data
  * @ClassName: DataModule
  * @Description: java类作用描述
  * @Author: Viden
