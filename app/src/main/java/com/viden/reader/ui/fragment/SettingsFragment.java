@@ -1,24 +1,22 @@
 package com.viden.reader.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
-import com.viden.reader.BuildConfig;
 import com.viden.reader.databinding.FragmentSettingBinding;
+import com.viden.reader.net.GithubRelease;
 import com.viden.reader.presenter.SettingsPresenter;
+import com.viden.reader.ui.activity.UpdateActivity;
 import com.viden.reader.view.ISettingsView;
-import com.viden.reader.view.IShowToastView;
 
-public class SettingsFragment extends BaseFragment implements ISettingsView{
+public class SettingsFragment extends BaseFragment implements ISettingsView {
 
-    private FragmentSettingBinding fragmentSettingBinding;
     private SettingsPresenter presenter;
 
     public static SettingsFragment newInstance() {
@@ -36,7 +34,7 @@ public class SettingsFragment extends BaseFragment implements ISettingsView{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        fragmentSettingBinding = FragmentSettingBinding.inflate(inflater,container,false);
+        com.viden.reader.databinding.FragmentSettingBinding fragmentSettingBinding = FragmentSettingBinding.inflate(inflater, container, false);
         presenter = new SettingsPresenter(this);
         fragmentSettingBinding.checkUpdateBtn.setOnClickListener(view -> {
             presenter.checkForUpdate();
@@ -44,4 +42,9 @@ public class SettingsFragment extends BaseFragment implements ISettingsView{
         return fragmentSettingBinding.getRoot();
     }
 
+    @Override
+    public void showUpdateInfo(GithubRelease githubRelease) {
+        Intent intent = new Intent(getActivity(), UpdateActivity.class);
+        startActivity(intent);
+    }
 }

@@ -1,6 +1,5 @@
 package com.viden.reader.presenter;
 
-import com.viden.reader.BuildConfig;
 import com.viden.reader.net.GithubRelease;
 import com.viden.reader.net.GithubService;
 import com.viden.reader.net.RetrofitServiceManager;
@@ -49,6 +48,7 @@ public class SettingsPresenter {
                             //dialog
                             if (githubRelease.getAssets().size() > 0) {
                                 view.showDialog("有新版本");
+                                view.showUpdateInfo(githubRelease);
                             }
                         } else {
                             view.showShortToast("没有新版本");
