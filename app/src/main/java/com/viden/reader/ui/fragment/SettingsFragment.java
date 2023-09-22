@@ -17,6 +17,7 @@ import com.viden.reader.view.ISettingsView;
 
 public class SettingsFragment extends BaseFragment implements ISettingsView {
 
+    public static final String GITHUB_RELEASE = "GithubRelease";
     private SettingsPresenter presenter;
 
     public static SettingsFragment newInstance() {
@@ -45,6 +46,7 @@ public class SettingsFragment extends BaseFragment implements ISettingsView {
     @Override
     public void showUpdateInfo(GithubRelease githubRelease) {
         Intent intent = new Intent(getActivity(), UpdateActivity.class);
+        intent.putExtra(GITHUB_RELEASE, githubRelease);
         startActivity(intent);
     }
 }

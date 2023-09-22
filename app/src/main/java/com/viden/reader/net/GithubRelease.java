@@ -2,10 +2,13 @@ package com.viden.reader.net;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.List;
 
-public class GithubRelease {
-
+public class GithubRelease implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 4176007804695080094L;
     @SerializedName("url")
     private String url;
     @SerializedName("assets_url")
@@ -207,7 +210,9 @@ public class GithubRelease {
         this.mentionsCount = mentionsCount;
     }
 
-    public static class AuthorDTO {
+    public static class AuthorDTO implements Serializable {
+        @Serial
+        private static final long serialVersionUID = -3314755439108109066L;
         @SerializedName("login")
         private String login;
         @SerializedName("id")
@@ -390,7 +395,9 @@ public class GithubRelease {
         }
     }
 
-    public static class ReactionsDTO {
+    public static class ReactionsDTO implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 5556106409646557350L;
         @SerializedName("url")
         private String url;
         @SerializedName("total_count")
@@ -493,7 +500,9 @@ public class GithubRelease {
         }
     }
 
-    public static class AssetsDTO {
+    public static class AssetsDTO implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 5625717455364239221L;
         @SerializedName("url")
         private String url;
         @SerializedName("id")
@@ -625,7 +634,9 @@ public class GithubRelease {
             this.browserDownloadUrl = browserDownloadUrl;
         }
 
-        public static class UploaderDTO {
+        public static class UploaderDTO implements Serializable {
+            @Serial
+            private static final long serialVersionUID = -6388124141858099338L;
             @SerializedName("login")
             private String login;
             @SerializedName("id")

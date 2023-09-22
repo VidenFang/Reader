@@ -59,6 +59,8 @@ dependencies {
     implementation 'androidx.compose.ui:ui-graphics'
     implementation 'androidx.compose.ui:ui-tooling-preview'
     implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.material:material-icons-core'
+    implementation 'androidx.compose.material:material-icons-extended'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
@@ -80,5 +82,10 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
 
     implementation 'com.google.code.gson:gson:2.10.1'
+
+    implementation 'com.halilibo.compose-richtext:richtext-ui:0.17.0'
+    implementation 'com.halilibo.compose-richtext:richtext-commonmark:0.17.0'
+    implementation 'com.halilibo.compose-richtext:richtext-ui-material3:0.17.0'
+    implementation 'com.halilibo.compose-richtext:richtext-ui-material:0.17.0'
 
 }

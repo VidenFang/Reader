@@ -47,7 +47,7 @@ public class SettingsPresenter {
                         if (VersionUtil.isNewVersion(githubRelease.getTagName())) {
                             //dialog
                             if (githubRelease.getAssets().size() > 0) {
-                                view.showDialog("有新版本");
+//                                view.showDialog("有新版本");
                                 view.showUpdateInfo(githubRelease);
                             }
                         } else {
