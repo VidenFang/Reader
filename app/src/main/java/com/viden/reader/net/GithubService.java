@@ -5,6 +5,10 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface GithubService {
-    @GET("repos/{githubOwner}/{githubRepo}/releases/latest")
-    Observable<GithubRelease> getLatestRepo(@Path("githubOwner") String githubOwner, @Path("githubRepo") String githubRepo);
+    @GET("repos/{owner}/{repo}/releases/latest")
+    Observable<GithubRelease> getLatestRepo(@Path("owner") String owner, @Path("repo") String repo);
+
+    @GET("api/v5/repos/{owner}/{repo}/releases/latest")
+    Observable<GithubRelease> getGitEELatestRepo(@Path("owner") String owner, @Path("repo") String repo);
+
 }

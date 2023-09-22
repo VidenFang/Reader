@@ -8,6 +8,7 @@ import com.viden.reader.view.ISettingsView;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -23,13 +24,20 @@ public class SettingsPresenter {
         this.view = view;
     }
 
-    public void checkForUpdate() {
+    public void checkForUpdate(String baseUrl, String owner, String repo, boolean isGitEE) {
         //toast
         view.showShortToast("正在检查更新…");
         //check
-        RetrofitServiceManager retrofitServiceManager = new RetrofitServiceManager("https://api.github.com/");
+        RetrofitServiceManager retrofitServiceManager = new RetrofitServiceManager(baseUrl);
         githubService = retrofitServiceManager.create(GithubService.class);
-        githubService.getLatestRepo("tachiyomiorg", "tachiyomi")
+        Observable<GithubRelease> latestRepo;
+        if (isGitEE) {
+            latestRepo = githubService.getGitEELatestRepo(owner,repo);
+        }else{
+            latestRepo  = githubService.getLatestRepo(owner, repo);
+
+        }
+        latestRepo
 //        githubService.getLatestRepo("VidenFang", "Reader")
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

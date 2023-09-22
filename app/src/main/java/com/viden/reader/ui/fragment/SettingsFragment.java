@@ -38,7 +38,8 @@ public class SettingsFragment extends BaseFragment implements ISettingsView {
         com.viden.reader.databinding.FragmentSettingBinding fragmentSettingBinding = FragmentSettingBinding.inflate(inflater, container, false);
         presenter = new SettingsPresenter(this);
         fragmentSettingBinding.checkUpdateBtn.setOnClickListener(view -> {
-            presenter.checkForUpdate();
+//            presenter.checkForUpdate("https://api.github.com/", "tachiyomiorg", "tachiyomi", false);
+            presenter.checkForUpdate("https://gitee.com/", "VidenFang", "tachiyomi", true);
         });
         return fragmentSettingBinding.getRoot();
     }

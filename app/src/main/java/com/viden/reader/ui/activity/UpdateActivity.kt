@@ -39,7 +39,13 @@ class UpdateActivity : ComponentActivity() {
     @Composable
     fun UpdateInfo(githubRelease: GithubRelease) {
         InfoScaffold(
-            onAcceptClick = { updateNow(githubRelease.htmlUrl) },
+            onAcceptClick = {
+                updateNow(
+                    if (githubRelease.htmlUrl == null)
+                        "https://gitee.com/VidenFang/tachiyomi/releases/tag/${githubRelease.tagName}"
+                    else githubRelease.htmlUrl
+                )
+            },
             acceptText = "下载",
             onRejectClick = {
                 finish()
@@ -75,6 +81,14 @@ class UpdateActivity : ComponentActivity() {
     fun UpdateInfoPreview() {
         val githubRelease = GithubRelease()
         githubRelease.tagName = "v0.0.1"
+        githubRelease.body = """
+                ## Yay
+                Foobar
+                
+                ### More info
+                - Hello
+                - World
+            """.trimIndent()
         MaterialTheme {
             UpdateInfo(githubRelease)
         }
