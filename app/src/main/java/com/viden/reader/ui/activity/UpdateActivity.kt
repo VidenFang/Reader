@@ -42,7 +42,7 @@ class UpdateActivity : ComponentActivity() {
             onAcceptClick = {
                 updateNow(
                     if (githubRelease.htmlUrl == null)
-                        "https://gitee.com/VidenFang/tachiyomi/releases/tag/${githubRelease.tagName}"
+                        "https://gitee.com/VidenFang/Reader/releases/tag/${githubRelease.tagName}"
                     else githubRelease.htmlUrl
                 )
             },

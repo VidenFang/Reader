@@ -39,7 +39,7 @@ public class SettingsFragment extends BaseFragment implements ISettingsView {
         presenter = new SettingsPresenter(this);
         fragmentSettingBinding.checkUpdateBtn.setOnClickListener(view -> {
 //            presenter.checkForUpdate("https://api.github.com/", "tachiyomiorg", "tachiyomi", false);
-            presenter.checkForUpdate("https://gitee.com/", "VidenFang", "tachiyomi", true);
+            presenter.checkForUpdate("https://gitee.com/", "VidenFang", "Reader", true);
         });
         return fragmentSettingBinding.getRoot();
     }
