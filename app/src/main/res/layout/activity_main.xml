@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".ui.activity.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,8 +13,10 @@
         android:layout_height="56dp"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        android:minHeight="?attr/actionBarSize"
+        android:minHeight="56dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight="56dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
