@@ -1,6 +1,7 @@
 package com.viden.reader.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +10,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
-import androidx.fragment.app.Fragment;
 
 import com.viden.reader.R;
 import com.viden.reader.data.models.Manga;
 import com.viden.reader.databinding.FragmentLibraryBinding;
 import com.viden.reader.presenter.LibraryPresenter;
 import com.viden.reader.ui.BaseActivity;
+import com.viden.reader.ui.activity.ScreenActivity;
 import com.viden.reader.ui.adapter.LibraryAdapter;
 import com.viden.reader.view.ILibraryView;
 
@@ -40,15 +41,15 @@ public class LibraryFragment extends BaseFragment implements ILibraryView {
     private LibraryAdapter mAdapter;
     private LibraryPresenter mLibraryPresenter;
 
+    public LibraryFragment() {
+    }
+
     @NonNull
     public static LibraryFragment newInstance() {
         Bundle args = new Bundle();
         LibraryFragment fragment = new LibraryFragment();
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public LibraryFragment() {
     }
 
     @Override
@@ -81,6 +82,10 @@ public class LibraryFragment extends BaseFragment implements ILibraryView {
         if (mAdapter == null) {
             mAdapter = new LibraryAdapter(getActivity(), R.layout.item_library, mangaList);
             fragmentLibraryBinding.gvLibrary.setAdapter(mAdapter);
+            fragmentLibraryBinding.gvLibrary.setOnItemClickListener((adapterView, view, i, l) -> {
+                Intent intent = new Intent(getActivity(), ScreenActivity.class);
+                startActivity(intent);
+            });
         } else {
             mAdapter.setData(mangaList);
         }

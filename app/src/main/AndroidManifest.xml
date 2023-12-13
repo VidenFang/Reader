@@ -27,6 +27,7 @@
         </activity>
 
         <activity android:name=".ui.activity.UpdateActivity" />
+        <activity android:name=".ui.activity.ScreenActivity" />
     </application>
 
 </manifest>
