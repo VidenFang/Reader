@@ -6,9 +6,9 @@
 
     <!-- Arrays -->
 
-    <string name="title_library">My library</string>
-    <string name="title_recent_updates">Recent updates</string>
-    <string name="title_catalogues">Catalogues</string>
-    <string name="title_settings">Settings</string>
+    <string name="title_library">书架</string>
+    <string name="title_updates">更新</string>
+    <string name="title_catalogues">浏览</string>
+    <string name="title_settings">设置</string>
     <string name="check_for_updates">检查更新</string>
 </resources>

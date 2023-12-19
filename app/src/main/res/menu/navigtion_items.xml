@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/action_library"
+        android:icon="@drawable/sc_collections_bookmark_48dp"
+        android:title="@string/title_library" />
+
+    <item
+        android:id="@+id/action_updates"
+        android:icon="@drawable/sc_history_48dp"
+        android:title="@string/title_updates" />
+    <item
+        android:id="@+id/action_catalogues"
+        android:icon="@drawable/sc_explore_48dp"
+        android:title="@string/title_catalogues" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/sc_new_releases_48dp"
+        android:title="@string/title_settings" />
+
+
+</menu>

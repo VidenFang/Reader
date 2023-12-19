@@ -9,20 +9,20 @@ import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.viden.reader.R;
-import com.viden.reader.databinding.ActivityMainBinding;
+import com.viden.reader.databinding.ActivityTabMainBinding;
 import com.viden.reader.ui.fragment.LibraryFragment;
 import com.viden.reader.ui.fragment.SettingsFragment;
 
 public class TabMainActivity extends BaseMainActivity {
 
-    private ActivityMainBinding binding;
+    private ActivityTabMainBinding binding;
 
     private Drawer mDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityTabMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setupToolbar();
         initDrawer(savedInstanceState);
@@ -39,7 +39,7 @@ public class TabMainActivity extends BaseMainActivity {
                                 .withName(R.string.title_library)
                                 .withIdentifier(R.id.nav_drawer_library),
                         new PrimaryDrawerItem()
-                                .withName(R.string.title_recent_updates)
+                                .withName(R.string.title_updates)
                                 .withIdentifier(R.id.nav_drawer_recent_updates),
                         new PrimaryDrawerItem()
                                 .withName(R.string.title_catalogues)
