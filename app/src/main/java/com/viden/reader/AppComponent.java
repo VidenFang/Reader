@@ -2,7 +2,7 @@ package com.viden.reader;
 
 import com.viden.reader.data.DataModule;
 import com.viden.reader.presenter.LibraryPresenter;
-import com.viden.reader.ui.activity.MainActivity;
+import com.viden.reader.ui.activity.TabMainActivity;
 
 import javax.inject.Singleton;
 
@@ -30,7 +30,7 @@ import dagger.Component;
 )
 public interface AppComponent {
 
-    void inject(MainActivity mainActivity);
+    void inject(TabMainActivity mainActivity);
 
     void inject(LibraryPresenter libraryPresenter);
 }
