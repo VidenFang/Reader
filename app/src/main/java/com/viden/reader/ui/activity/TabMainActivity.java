@@ -3,10 +3,7 @@ package com.viden.reader.ui.activity;
 
 import android.os.Bundle;
 
-import androidx.annotation.IdRes;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -15,8 +12,6 @@ import com.viden.reader.R;
 import com.viden.reader.databinding.ActivityMainBinding;
 import com.viden.reader.ui.fragment.LibraryFragment;
 import com.viden.reader.ui.fragment.SettingsFragment;
-
-import timber.log.Timber;
 
 public class TabMainActivity extends BaseMainActivity {
 

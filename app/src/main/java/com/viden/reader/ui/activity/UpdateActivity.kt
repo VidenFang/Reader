@@ -40,10 +40,15 @@ class UpdateActivity : ComponentActivity() {
     fun UpdateInfo(githubRelease: GithubRelease) {
         InfoScaffold(
             onAcceptClick = {
+                val assets = githubRelease.assets
                 updateNow(
-                    if (githubRelease.htmlUrl == null)
-                        "https://gitee.com/VidenFang/Reader/releases/tag/${githubRelease.tagName}"
-                    else githubRelease.htmlUrl
+                    if (assets != null && assets.size > 0) {
+                        assets.get(0).browserDownloadUrl
+                    } else {
+                        if (githubRelease.htmlUrl == null)
+                            "https://gitee.com/VidenFang/Reader/releases/tag/${githubRelease.tagName}"
+                        else githubRelease.htmlUrl
+                    }
                 )
             },
             acceptText = "下载",
