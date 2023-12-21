@@ -5,10 +5,14 @@
     <string name="label_main">Manga</string>
 
     <!-- Arrays -->
-
-    <string name="title_library">书架</string>
     <string name="title_updates">更新</string>
+
+    <string name="label_library">书架</string>
+    <string name="label_recent_updates">更新</string>
+    <string name="label_recent_manga">历史</string>
     <string name="title_catalogues">浏览</string>
     <string name="title_settings">设置</string>
     <string name="check_for_updates">检查更新</string>
+    <string name="label_more">更多</string>
+    <string name="label_browse">浏览</string>
 </resources>

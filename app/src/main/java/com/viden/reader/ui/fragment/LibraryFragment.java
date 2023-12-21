@@ -65,7 +65,7 @@ public class LibraryFragment extends BaseFragment implements ILibraryView {
         fragmentLibraryBinding = FragmentLibraryBinding.inflate(inflater, container, false);
         ActionBar actionBar = ((BaseActivity) getActivity()).getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(R.string.title_library);
+            actionBar.setTitle(R.string.label_library);
         }
         mLibraryPresenter.initLibMangaDatas();
         return fragmentLibraryBinding.getRoot();

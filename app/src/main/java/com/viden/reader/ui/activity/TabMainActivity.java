@@ -36,7 +36,7 @@ public class TabMainActivity extends BaseMainActivity {
                 .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(
                         new PrimaryDrawerItem()
-                                .withName(R.string.title_library)
+                                .withName(R.string.label_library)
                                 .withIdentifier(R.id.nav_drawer_library),
                         new PrimaryDrawerItem()
                                 .withName(R.string.title_updates)
