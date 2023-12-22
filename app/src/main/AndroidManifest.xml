@@ -30,6 +30,7 @@
 
         <activity android:name=".ui.activity.UpdateActivity" />
         <activity android:name=".ui.activity.ScreenActivity" />
+        <activity android:name=".ui.activity.reader.ReaderActivity" />
     </application>
 
 </manifest>

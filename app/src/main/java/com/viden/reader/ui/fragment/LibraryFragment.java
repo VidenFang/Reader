@@ -16,7 +16,7 @@ import com.viden.reader.data.models.Manga;
 import com.viden.reader.databinding.FragmentLibraryBinding;
 import com.viden.reader.presenter.LibraryPresenter;
 import com.viden.reader.ui.BaseActivity;
-import com.viden.reader.ui.activity.ScreenActivity;
+import com.viden.reader.ui.activity.reader.ReaderActivity;
 import com.viden.reader.ui.adapter.LibraryAdapter;
 import com.viden.reader.view.ILibraryView;
 
@@ -83,7 +83,8 @@ public class LibraryFragment extends BaseFragment implements ILibraryView {
             mAdapter = new LibraryAdapter(getActivity(), R.layout.item_library, mangaList);
             fragmentLibraryBinding.gvLibrary.setAdapter(mAdapter);
             fragmentLibraryBinding.gvLibrary.setOnItemClickListener((adapterView, view, i, l) -> {
-                Intent intent = new Intent(getActivity(), ScreenActivity.class);
+//                Intent intent = new Intent(getActivity(), ScreenActivity.class);
+                Intent intent = new Intent(getActivity(), ReaderActivity.class);
                 startActivity(intent);
             });
         } else {

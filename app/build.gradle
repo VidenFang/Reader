@@ -88,4 +88,5 @@ dependencies {
     implementation 'com.halilibo.compose-richtext:richtext-ui-material3:0.17.0'
     implementation 'com.halilibo.compose-richtext:richtext-ui-material:0.17.0'
 
+    implementation 'com.jakewharton.rxrelay:rxrelay:1.2.0'
 }
