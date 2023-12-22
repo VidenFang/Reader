@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.viden.reader.R
 import com.viden.reader.databinding.ActivityReaderBinding
+import com.viden.reader.ui.BaseActivity
 import com.viden.reader.ui.activity.reader.viewer.MangaPagerAdapter
 
 /**
@@ -13,7 +14,7 @@ import com.viden.reader.ui.activity.reader.viewer.MangaPagerAdapter
  * @author VidenFang
  * @since 2023/12/22
  */
-class ReaderActivity : AppCompatActivity() {
+class ReaderActivity : BaseActivity() {
     private lateinit var binding: ActivityReaderBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

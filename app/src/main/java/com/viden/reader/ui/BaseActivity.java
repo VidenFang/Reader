@@ -1,6 +1,11 @@
 package com.viden.reader.ui;
 
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.viden.reader.R;
 
 /**
  * @ProjectName: Manga
@@ -15,4 +20,8 @@ import androidx.appcompat.app.AppCompatActivity;
  * @Version: 1.0
  */
 public abstract class BaseActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 }
